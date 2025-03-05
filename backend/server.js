@@ -48,6 +48,7 @@ app.use((err, req, res, next) => {
     res.status(500).send('Internal server error'); // Modified to send plain text error response
 });
 
+console.log('Starting server...'); // Added startup log
 app.listen(port, () => {
     console.log(`Backend running on port ${port}`);
 });
