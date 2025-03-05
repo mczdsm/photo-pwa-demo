@@ -13,7 +13,7 @@ services:
   backend:
     image: node:18-alpine
     ports:
-      - "3000:3000"
+      - "3131:3131"
     volumes:
       - ./backend:/app
       - ./photos:/app/photos
