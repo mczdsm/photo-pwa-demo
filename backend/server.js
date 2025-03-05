@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
   res.send('Hello from backend!');
 });
 
+app.post('/upload', (req, res) => {
+  res.send('Upload endpoint hit!');
+});
+
 console.log('About to start listening on port', port);
 const server = app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
