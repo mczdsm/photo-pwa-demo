@@ -13,7 +13,7 @@ async function uploadPhoto() {
     formData.append('photo', photoInput.files[0]);
 
     try {
-        const response = await fetch('http://localhost:3000/upload', { // Modified URL to point to backend directly
+        const response = await fetch('http://localhost:3131/upload', { // Modified URL to point to backend directly
             method: 'POST',
             body: formData
         });
