@@ -15,7 +15,7 @@ async function uploadPhoto() {
     try {
         // Use 'backend' service name to access backend from frontend in Docker
         const response = await fetch('http://backend:3131/upload', {
-            method: 'POST',
+            method: 'POST', // Explicitly set method to POST
             body: formData
         });
         const result = await response.text();
