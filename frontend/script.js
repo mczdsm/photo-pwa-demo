@@ -17,8 +17,8 @@ async function uploadPhoto() {
             method: 'POST',
             body: formData
         });
-        const result = await response.json();
-        status.textContent = result.message;
+        const result = await response.text(); // Changed from response.json() to response.text()
+        status.textContent = result; // Directly use the text response
     } catch (error) {
         status.textContent = 'Error uploading photo: ' + error.message;
     }
