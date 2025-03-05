@@ -18,6 +18,6 @@ services:
       - ./backend:/app
       - ./photos:/app/photos
     working_dir: /app
-    command: npm install && npm start # Install dependencies then start the server
+    command: npm install && node server.js # Explicitly run node server.js
     environment:
       - NODE_ENV=development

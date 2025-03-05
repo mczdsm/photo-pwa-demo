@@ -1,3 +1,4 @@
+console.log('Server script is starting...'); // Very early log
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
