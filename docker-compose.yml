@@ -18,7 +18,6 @@ services:
       - ./backend:/app
       - ./photos:/app/photos
     working_dir: /app
-    # Capture output of npm install and node server.js to docker logs
-    command: /bin/sh -c "npm install && node server.js > startup.log 2>&1 && cat startup.log"
+    command: /bin/sh -c "npm install && node server.js"
     environment:
       - NODE_ENV=development
