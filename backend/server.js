@@ -5,7 +5,7 @@ const fs = require('fs');
 const cors = require('cors');
 
 const app = express();
-const port = 3000;
+const port = 3131; // Changed port to 3131
 
 app.use(cors());
 
