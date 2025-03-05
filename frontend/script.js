@@ -13,12 +13,13 @@ async function uploadPhoto() {
     formData.append('photo', photoInput.files[0]);
 
     try {
-        const response = await fetch('http://localhost:3131/upload', { // Modified URL to point to backend directly
+        // Use 'backend' service name to access backend from frontend in Docker
+        const response = await fetch('http://backend:3131/upload', {
             method: 'POST',
             body: formData
         });
-        const result = await response.text(); // Changed from response.json() to response.text()
-        status.textContent = result; // Directly use the text response
+        const result = await response.text();
+        status.textContent = result;
     } catch (error) {
         status.textContent = 'Error uploading photo: ' + error.message;
     }
