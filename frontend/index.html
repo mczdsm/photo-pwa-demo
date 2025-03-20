@@ -5,13 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Photo Demo</title>
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h1>Patient Photo Upload</h1>
-    <input type="text" id="patientId" placeholder="Enter Patient ID (e.g., 123)">
-    <input type="file" id="photoInput" accept="image/*" capture="camera">
-    <button onclick="uploadPhoto()">Upload Photo</button>
+
+    <div id="step1">
+        <input type="text" id="patientId" placeholder="Enter Patient ID (e.g., 123)">
+        <input type="file" id="photoInput" accept="image/*" capture="camera">
+        <button onclick="uploadPhoto()">Upload Photo</button>
+    </div>
+
+    <div id="step2" style="display:none;">
+        <input type="text" id="patientIdVerify" placeholder="Re-enter Patient ID">
+        <button onclick="verifyPatient()">Continue</button>
+    </div>
+
+    <div id="step3" style="display:none;">
+        <img id="uploadedPhoto" src="" alt="Uploaded Photo" style="max-width: 100%; height: auto;">
+        <p>Patient ID: <span id="displayPatientId"></span></p>
+        <p>Patient DOB: <span id="displayPatientDOB"></span></p>
+        <button onclick="confirmDOB()">Confirm and Send to EMR</button>
+    </div>
+
     <p id="status"></p>
 
     <script src="script.js"></script>
